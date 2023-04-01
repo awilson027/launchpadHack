@@ -21,7 +21,7 @@ export function HomeScreen() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Home!</Text>
-            //<FlatButton text='Pull Day: 1' onPress={props.handle} />
+
         </View>
     );
 
