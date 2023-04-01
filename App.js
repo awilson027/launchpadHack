@@ -2,39 +2,47 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-function HomeScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Home!</Text>
-        </View>
-    );
-}
+import {HomeScreen} from "./util/Home.js";
+import {ExercisesScreen} from "./util/Exercises";
+import {SettingsScreen} from "./util/Settings";
 
-function SettingsScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Settings!</Text>
-        </View>
-    );
-}
-
-function DetailsScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Details</Text>
-        </View>
-    );
-}
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
-            <Tab.Screen name="Details" component={DetailsScreen} />
+            <Tab.Screen name="Home"
+                        component={HomeScreen}
+                        options={{
+                            tabBarLabel: 'Home',
+                            tabBarIcon: () => (
+                                <Icon name="home" size={20} />
+                            ),
+                            showIcon: true,
+                        }} />
+            <Tab.Screen name="Exercises"
+                        component={ExercisesScreen}
+                        options={{
+                            tabBarLabel: 'Exercises',
+                            tabBarIcon: () => (
+                                <MaterialCommunityIcons name="weight-lifter" size={20} />
+                            ),
+                            showIcon: true,
+                        }} />
+            <Tab.Screen name="Settings"
+                        component={SettingsScreen}
+                        options={{
+                            tabBarLabel: 'Settings',
+                            tabBarIcon: () => (
+                                <Ionicons name="settings-sharp" size={20} />),
+                            showIcon: true,
+                        }} />
+
         </Tab.Navigator>
     );
 }
