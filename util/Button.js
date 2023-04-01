@@ -5,7 +5,7 @@ export default function FlatButton({ text, onPress })
 {
     return (
         <TouchableOpacity onPress={onPress}>
-            <view style={styles.button}>
+            <View style={styles.button}>
                 <Text style={styles.buttonText}>{ text }</Text>
             </View>
         </TouchableOpacity>
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textTransform: 'uppercase',
         fontSize: 16,
-        textAllign: 'center'
+        textAlign: 'center'
     }
-}}
+})
