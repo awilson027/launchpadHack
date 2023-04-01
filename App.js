@@ -6,9 +6,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import {HomeScreen} from "./util/Home.js";
-import {ExercisesScreen} from "./util/Exercises";
-import {SettingsScreen} from "./util/Settings";
+import {HomeScreen} from "./screens/Home.js";
+import {ExercisesScreen} from "./screens/Exercises";
+import {SettingsScreen} from "./screens/Settings";
 
 
 const Tab = createBottomTabNavigator();
