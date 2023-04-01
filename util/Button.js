@@ -1,29 +1,59 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native';
 
-export default function FlatButton({ text, onPress })
+export default ({ text, onPress, description }) =>
 {
+    const buttonStyle = [styles.button];
+    const textStyle = [styles.buttonText];
+
     return (
-        <TouchableOpacity onPress={onPress}>
-            <View style={styles.button}>
-                <Text style={styles.buttonText}>{ text }</Text>
-            </View>
+        <TouchableOpacity onPress={onPress} style={buttonStyle}>
+            <Text style={textStyle}>{ text }</Text>
+            <Text style={styles.secondText}>{ description } Exercises</Text>
         </TouchableOpacity>
     )
 }
 
+const screen = Dimensions.get("window");
+const buttonWidth = screen.width*0.9;
+
+
 const styles = StyleSheet.create({
+    newButton: {
+        borderRadius: 8,
+        paddingVertical: 14,
+        paddingHorizontal: 10,
+        backgroundColor: '#8c8c8c',
+        flex: 0,
+        height: 60,
+        width: screen.width*0.9,
+        alignItems: "flex-start",
+        justifyContent: "center",
+        margin: 5,
+    },
     button: {
         borderRadius: 8,
         paddingVertical: 14,
         paddingHorizontal: 10,
-        backgroundColor: '#CBFFC3',
+        backgroundColor: '#bce3b7',
+        flex: 0,
+        height: 60,
+        width: screen.width*0.9,
+        alignItems: "flex-start",
+        justifyContent: "center",
+        margin: 5,
     },
     buttonText: {
-        color: 'white',
+        color: 'black',
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        fontSize: 16,
-        textAlign: 'center'
-    }
+        fontSize: 20,
+        textAlign: 'center',
+    },
+    secondText: {
+        color: 'black',
+        fontWeight: 'normal',
+        fontSize: 14,
+        textAlign: 'left',
+    },
 })
